@@ -55,7 +55,7 @@ $frame-color: rgba(255,255,255,0.22);
     }
   }
   form {
-    margin: 135px 0 65px 0;
+    margin: 135px 0 45px 0;
     padding: 70px 10px 57px 10px;
     border: solid 1px $frame-color;
     border-radius: 5px;
@@ -158,6 +158,11 @@ nav {
     padding: 10% 20%;
     img {
       width: 120px;
+    }
+  }
+  nav {
+    ul {
+      justify-content: center;
     }
   }
 }
