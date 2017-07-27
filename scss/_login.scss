@@ -1,0 +1,203 @@
+$font-color: #ffffff;
+$hover-color: rgba(255, 255, 255, 0.4);
+$frame-color: rgba(255,255,255,0.22);
+
+@mixin font-roboto {
+  font-family: 'Roboto', sans-serif;
+  color: $font-color;
+  font-weight: 300;
+  font-stretch: condensed;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  background: url('../img/bg.jpeg') no-repeat bottom;
+  background-size: cover;
+  height: auto;
+  min-height: 100vh;
+}
+
+.logo-frame {
+  height: 160px;
+  width: 160px;
+  border: solid 2px $frame-color;
+  border-radius: 5px;
+  text-align: center;
+  padding: 30% 20%;
+  float: right;
+  img {
+    width: 160px;
+  }
+  &:hover {
+    border: solid 2px rgba(255,255,255,0.5);
+    background-color: rgba(255,255,255,0.12);
+  }
+}
+
+.login-form {
+  min-width: 546px;
+  @include font-roboto;
+  background-color: #0bbed3;
+  padding: 36px 28px;
+  border-radius: 5px;
+  margin: auto;
+  text-align: center;
+  header {
+    h1 {
+      font-size: 40px;
+      text-shadow: -0.7px -0.7px 0 rgba(0, 0, 0, 0.11);
+      margin-bottom: 0;
+      line-height: 1.2;
+    }
+    p {
+      font-size: 15px;
+    }
+  }
+  form {
+    margin: 135px 0 65px 0;
+    padding: 70px 10px 57px 10px;
+    border: solid 1px $frame-color;
+    border-radius: 5px;
+    .avatar {
+      width: 94px;
+      height: 94px;
+      border-radius: 50%;
+      background-color: $font-color;
+      margin: -120px auto 26px auto;
+      img {
+        margin: 15px 0;
+        height: 60px;
+        width: 70px;
+        opacity: 0.1;
+
+      }
+    }
+
+    @mixin button-and-span {
+      margin: 5px;
+      line-height: 24px;
+      color: $font-color;
+      text-shadow: 0.7px 0.7px 0 $font-color;
+      font-size: 18px;
+    }
+
+    span {
+      @include button-and-span;
+    }
+    button  {
+      display: inline-block;
+      @include button-and-span;
+      img {
+        width: 24px;
+      }
+      &:hover {
+        opacity: 0.4;
+      }
+    }
+    input {
+      display: inline-block;
+      font-stretch: condensed;
+      &[type='text'] {
+        width: 85%;
+        height: 35px;
+        margin: 22px 10px;
+      }
+      &[type="submit"] {
+        background-color: $font-color;
+        border: none;
+        border-radius: 5px;
+        padding: 0 50px;
+        margin: 0 20px;
+        font-size: 15.5px;
+        line-height: 2.47;
+        &:hover {
+          background-color: $hover-color;
+        }
+      }
+    }
+    a {
+      font-size: 15px;
+      letter-spacing: -0.04px;
+      color: $font-color;
+      text-transform: uppercase;
+      &:hover {
+        color: $hover-color;
+      }
+    }
+  }
+}
+
+nav {
+  ul {
+    display: flex;
+    margin-left: 0;
+    li {
+      list-style-type: none;
+      margin: 20px 20px 0 0;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 0.3px;
+      text-shadow: 0.6px 0.8px 0 rgba(15, 15, 15, 0.83);
+      text-transform: uppercase;
+      a {
+        color: rgba(255, 255, 255, 0.8);
+        &:hover {
+          color: $hover-color;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 785px) {
+  .logo-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 10% 20%;
+    img {
+      width: 120px;
+    }
+  }
+}
+@media only screen and (max-width: 645px) {
+  .login-form {
+    min-width: 0;
+    padding: 25px 17px;
+    header {
+      h1 {
+        font-size: 30px;
+      }
+      p {
+        font-size: 12px;
+      }
+    }
+    form {
+      margin: 100px 0 20px 0;
+      padding-bottom: 27px;
+      span {
+        font-size: 16px;
+      }
+      button {
+        img {
+          width: 18px;
+          &[src*="keyboard"] {
+            display: none;
+          }
+        }
+      }
+      input {
+        &[type="text"], &[type="submit"] {
+          margin: 10px 2px;
+          width: 100%;
+        }
+      }
+      a {
+        width: 100%;
+        margin-bottom: 25px;
+        font-size: 14px;
+      }
+    }
+  }
+}
