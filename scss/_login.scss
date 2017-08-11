@@ -12,8 +12,9 @@ $frame-color: rgba(255,255,255,0.22);
 .container {
   display: flex;
   align-items: center;
-  background: url('../img/bg.jpeg') no-repeat bottom;
+  background: url('../img/bg.jpeg') no-repeat bottom, rgba(10, 10, 10, 0.6);
   background-size: cover;
+  background-blend-mode: multiply;
   height: auto;
   min-height: 100vh;
 }
@@ -38,7 +39,7 @@ $frame-color: rgba(255,255,255,0.22);
 .login-form {
   min-width: 546px;
   @include font-roboto;
-  background-color: #0bbed3;
+  background-color: #0d7f8d;
   padding: 36px 28px;
   border-radius: 5px;
   margin: auto;
@@ -119,10 +120,26 @@ $frame-color: rgba(255,255,255,0.22);
     .error {
       visibility: hidden;
       line-height: 15px;
-      font-size: 15px;
-      margin: 3px 20px;
-      color: red;
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      margin: 10px 20px;
+      color: #fff;
       text-align: left;
+      padding: 7px 15px;
+      background-color: #ea2d2d;
+      border-radius: 4px;
+      width: fit-content;
+      max-width: 75%;
+      &::before {
+        margin-top: -15px;
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 10px 10px 10px;
+        border-color: transparent transparent #ea2d2d transparent;
+        content: "";
+      }
     }
     a {
       font-size: 15px;
@@ -149,7 +166,7 @@ nav {
       text-shadow: 0.6px 0.8px 0 rgba(15, 15, 15, 0.83);
       text-transform: uppercase;
       a {
-        color: rgba(255, 255, 255, 0.8);
+        color: #fff;
         &:hover {
           color: $hover-color;
         }

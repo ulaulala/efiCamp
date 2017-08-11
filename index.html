@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foundation for Sites</title>
+    <title>Logging to Efi3</title>
     <link rel="stylesheet" href="css/app.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet">
   </head>
@@ -12,7 +12,7 @@
   <div class="container">
     <div class="row">
       <div class="small-10 medium-1 column small-offset-1 medium-offset-1">
-        <p class="logo-frame"><img src="./img/efi.svg"></p>
+        <p class="logo-frame"><img src="./img/efi.svg" alt="logo efi"></p>
       </div>
       <div class="small-10 medium-6 column small-offset-1 medium-offset-0">
         <div class="login-form">
@@ -21,22 +21,22 @@
             <p>Aby, zaimportować dane zaloguj się do swojego banku</p>
           </header>
           <form>
-            <p class="avatar"><img src="./img/avatar.svg"></p>
+            <p class="avatar"><img src="./img/avatar.svg" alt="avatar"></p>
             <span>127633223</span>
-            <button><img src="img/close.svg"></button>
-            <input type="password">
-            <button><img src="img/keyboard.svg"></button>
-            <button><img src="img/eye.svg"></button>
-            <p class="error">To pole musi być wypełnione :(</p>
+            <button><img src="img/close.svg" alt="clear login"></button>
+            <input type="password" aria-label="password" aria-labelledby="submit">
+            <button><img src="img/keyboard.svg" alt="show keyboard"></button>
+            <button><img src="img/eye.svg" alt="show password"></button>
+            <p class="error"></p>
             <a href="">Select other</a>
-            <input type="submit" value="GO">
+            <input type="submit" id="submit" value="GO">
           </form>
         </div>
         <nav>
           <ul>
-            <li><a>Security</a></li>
-            <li><a>Loggin in</a></li>
-            <li><a>Contact</a></li>
+            <li><a href="">Security</a></li>
+            <li><a href="">Loggin in</a></li>
+            <li><a href="">Contact</a></li>
           </ul>
         </nav>
       </div>
