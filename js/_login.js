@@ -1,3 +1,6 @@
+// Poniższe zmienne są aktualnie globalne, warto jest zawrzeć w zakresie (scopie)
+// (function() { ... }) tak jak resztę kodu.
+
 const input = document.querySelectorAll("input")[0];
 const button = document.querySelectorAll("input")[1];
 const eyeButton = document.querySelectorAll("button")[2];
@@ -30,6 +33,7 @@ function checkPassword() {
                 checkResponse();
             }
             else {
+                // Może zamiast inline-owych styli klasy? Dotyczy się też pozostałych przypadków.
                 input.style.border = "solid 2px red";
             }
 }
@@ -44,12 +48,13 @@ function checkResponse() {
         url: "https://efigence-camp.herokuapp.com/api/login",
         error: function(response) {
             console.log(response);
+
+
             info.style.visibility = "visible";
             info.innerText = response.responseJSON.message;
         },
         success: function(response) {
             console.log("succes", response);
-
             input.style.border = "solid 2px lightgreen";
             info.style.visibility = "hidden";
         }
