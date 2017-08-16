@@ -1,14 +1,13 @@
-// Poniższe zmienne są aktualnie globalne, warto jest zawrzeć w zakresie (scopie)
-// (function() { ... }) tak jak resztę kodu.
-
 const input = document.querySelectorAll("input")[0];
 const button = document.querySelectorAll("input")[1];
 const eyeButton = document.querySelectorAll("button")[2];
+const info = document.querySelector("form .error");
 
 (function() {
     input.addEventListener("keyup", function(event) {
-        input.style.border = "none";
-        info.style.visibility = "hidden";
+        input.classList.remove("failed");
+        info.classList.remove("visible");
+        info.classList.add("hidden");
     });
     button.addEventListener("click", function(event){
         event.preventDefault();
@@ -21,21 +20,18 @@ const eyeButton = document.querySelectorAll("button")[2];
         }
     });
     eyeButton.addEventListener("click", function(event) {
-       event.preventDefault();
-       showPassword();
+        event.preventDefault();
+        showPassword();
     });
 })();
 
-var info = document.querySelector("form .error");
-
 function checkPassword() {
-            if(input.value) {
-                checkResponse();
-            }
-            else {
-                // Może zamiast inline-owych styli klasy? Dotyczy się też pozostałych przypadków.
-                input.style.border = "solid 2px red";
-            }
+    if(input.value) {
+        checkResponse();
+    }
+    else {
+        input.classList.add("failed");
+    }
 }
 
 function checkResponse() {
@@ -48,27 +44,29 @@ function checkResponse() {
         url: "https://efigence-camp.herokuapp.com/api/login",
         error: function(response) {
             console.log(response);
-
-
-            info.style.visibility = "visible";
+            info.classList.add("visible");
+            info.classList.remove("hidden");
             info.innerText = response.responseJSON.message;
         },
         success: function(response) {
             console.log("succes", response);
-            input.style.border = "solid 2px lightgreen";
-            info.style.visibility = "hidden";
+            info.classList.remove("visible");
+            info.classList.add("hidden");
         }
     });
 }
 
 function showPassword() {
-    if (input.type === 'password') {
-        input.type = 'text';
-        eyeButton.style.opacity = '0.4';
+    if (input.type === "password") {
+        input.type = "text";
+        eyeButton.classList.add("disable");
+        eyeButton.classList.remove("enable");
     }
     else {
-        input.type = 'password';
-        eyeButton.style.opacity = '1';
+        input.type = "password";
+        eyeButton.classList.add("enable");
+        eyeButton.classList.remove("disable");
     }
-
 }
+
+
