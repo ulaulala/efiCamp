@@ -1,0 +1,16 @@
+<svg width="486" height="322" viewBox="0 0 486 322" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>017-e-mail-envelope</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(2393 -137)">
+<g id="017-e-mail-envelope">
+<g id="Group">
+<g id="Vector">
+<use xlink:href="#path0_fill" transform="translate(-2393 137)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 0 -2.50244e-06L 0 321.763L 485.411 321.763L 485.411 -2.50244e-06L 0 -2.50244e-06ZM 242.708 198.702L 43.612 23.867L 441.799 23.867L 242.708 198.702ZM 163.397 160.825L 23.867 283.354L 23.867 38.295L 163.397 160.825ZM 181.482 176.709L 242.702 230.471L 303.922 176.709L 441.924 297.896L 43.487 297.896L 181.482 176.709ZM 322.008 160.831L 461.543 38.295L 461.543 283.354L 322.008 160.831Z"/>
+</defs>
+</svg>

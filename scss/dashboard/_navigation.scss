@@ -1,0 +1,119 @@
+
+.fixed-bar {
+  @include font-roboto;
+  background-color: #0bbed3;
+  position: fixed;
+  width: 100vw;
+  height: 140px;
+  padding: 15px 0;
+  left: 0;
+  top: 0;
+}
+header {
+  button {
+    height: 110px;
+    &:last-child {
+      border-left: solid 1px $frame-color;
+    }
+    img {
+      height: 40px;
+      max-width: 40px;
+    }
+  }
+}
+.personal-info {
+  display: flex;
+  div {
+    margin: 0 15px;
+    p {
+      font-size: 30px;
+      font-stretch: condensed;
+    }
+    span {
+      img {
+        width: 30px;
+        margin: 0 7px;
+      }
+      &::before, &:before {
+        content: ''; /*tutaj licznik wiadomości*/
+        visibility: hidden;
+        height: 25px;
+        width: 25px;
+        margin: -10px 0 0 25px;
+        border-radius: 50%;
+        position: absolute;
+        background-color: #e9157c;
+      }
+    }
+  }
+}
+nav.menu {
+  display: inline-block;
+  ul {
+    display: flex;
+    li {
+      @include font-roboto;
+      font-size: 14px;
+      text-shadow: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      list-style-type: none;
+      width: 90px;
+      height: 145px;
+      margin: -20px 0 0 0;
+      img {
+        height: 40px;
+        margin: 20px;
+        color: #fff;
+      }
+      &:hover {
+        background-color: #0a0a0a;
+        &::after, &:after {
+          content: '';
+          height: 20px;
+          width: 20px;
+          margin-top: 72px;
+          border-radius: 50%;
+          border: solid 10px #0a0a0a;
+          position: absolute;
+        }
+      }
+    }
+  }
+}
+.mini {
+  width: 100px;
+  height: 100px;
+  margin: 0 5px;
+}
+.search-container {
+  display: inline-block;
+  float: right;
+  .search {
+    display: none;
+    width: 739px;
+    height: 110px;
+    z-index: 1;
+    border-radius: 10px;
+    background-color: #ffffff;
+    input {
+      margin: 15px 20px 15px 30px;
+      height: 80px;
+      font-size: 30px;
+      border-style: none;
+      box-shadow: none;
+      background-color: transparent;
+      &:focus {
+        outline: none;
+        border-bottom: solid 2px rgba(233, 229, 233, 0.44);
+      }
+    }
+    button {
+      float: right;
+      background-color: transparent;
+    }
+  }
+}
+

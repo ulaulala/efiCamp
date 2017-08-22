@@ -1,0 +1,120 @@
+h1, h2, h3, h4, h5, h6, p, span, button {
+  font-family: 'Roboto', sans-serif;
+}
+.container {
+  background-color: #dadbdb;
+  margin-top: 140px;
+  min-height: 100vh;
+}
+
+.dashboard-button {
+  background-color: #0bbed3;
+  border-radius: 4px;
+  @include font-roboto;
+  font-stretch: condensed;
+  text-transform: uppercase;
+  padding: 15px 30px;
+}
+.down {
+  background-color: transparent;
+  padding: 0;
+  i {
+    color: #0bbed3;
+    vertical-align: middle;
+    margin: 0 5px;
+    font-size: 30px;
+  }
+}
+
+
+h2 {
+  font-size: 60px;
+  margin: 30px 0;
+}
+.statistics {
+  h3, p {
+    font-size: 30px;
+  }
+  p span {
+    font-weight: bold;
+  }
+
+}
+.options {
+  padding: 50px 0 25px 0;
+  text-align: right;
+  p {
+    margin-top: 50px;
+    display: flex;
+    justify-content: flex-end;
+    line-height: 40px;
+    button, label {
+      margin-left: 25px;
+    }
+  }
+}
+h4 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+.main-chart {
+  img {
+    width: 100%;
+  }
+}
+.product-container {
+  display: flex;
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 7px 0;
+  padding: 15px;
+  box-sizing: border-box;
+  img {
+    height: 40px;
+    margin: 10px 20px 10px 10px;
+  }
+  p {
+    margin: 0;
+  }
+  &::before, &:before {
+    content: ''; /*tutaj licznik wiadomości*/
+    visibility: hidden;
+    height: 25px;
+    width: 25px;
+    margin: 0 0 0 35px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: #e9157c;
+  }
+}
+.history-container {
+  margin: 0;
+  overflow-y: scroll;
+  max-height: 500px;
+  border-radius: 7px;
+  li {
+    list-style-type: none;
+    height: 70px;
+    padding: 20px 15px;
+    background-color: $font-color;
+    border-bottom: solid 1px #dadbdb;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: content-box;
+    div {
+      display: inline-block;
+      .correspondent, .type {
+        margin: 0;
+      }
+      &.payment, &.date {
+        flex-grow: 1;
+        text-align: center;
+        line-height: 70px;
+      }
+      &.details {
+        flex-grow: 5;
+        margin: 0 10px;
+      }
+    }
+  }
+}

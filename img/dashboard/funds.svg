@@ -1,0 +1,16 @@
+<svg width="444" height="416" viewBox="0 0 444 416" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>002-chart-of-columns</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(2917 -2504)">
+<g id="002-chart-of-columns">
+<g id="Group">
+<g id="Vector">
+<use xlink:href="#path0_fill" transform="translate(-2917 2504)" fill="#A4A4A4"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 104.106 363.228L 58.712 363.228L 58.712 172.573L 104.107 172.573L 104.107 363.228L 104.106 363.228ZM 176.738 98.429L 131.343 98.429L 131.343 364.741L 176.738 364.741L 176.738 98.429ZM 318.821 98.429L 273.426 98.429L 273.426 364.741L 318.821 364.741L 318.821 98.429ZM 246.698 161.981L 201.303 161.981L 201.303 364.741L 246.698 364.741L 246.698 161.981ZM 24.21 391.399L 24.21 2.89917e-07L 0 2.89917e-07L 0 415.616L 443.857 415.616L 443.857 391.405L 24.21 391.405L 24.21 391.399Z"/>
+</defs>
+</svg>

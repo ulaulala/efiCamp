@@ -1,0 +1,305 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/app.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <header class="fixed-bar">
+        <div class="row">
+            <div class="column small-12 medium-5">
+                <div class="personal-info">
+                    <span class="logo-frame mini">
+                        <img src="./img/efi.svg" alt="logo efi">
+                    </span>
+                    <span class="logo-frame mini">
+                        <img src="./img/cool.svg">
+                    </span>
+                    <div>
+                        <p>Jan Kowalski</p>
+                        <span>
+                            <img src="img/dashboard/message.svg">
+                        </span>
+                        <span>
+                            <img src="img/dashboard/settings.svg">
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="column small-12 medium-7">
+                <nav class="menu">
+                    <ul>
+                        <li>
+                            <img src="img/dashboard/home.svg">
+                            <p>Home</p>
+                        </li>
+                        <li>
+                            <img src="img/dashboard/analyse.svg">
+                            <p>Analyse</p>
+                        </li>
+                        <li>
+                            <img src="img/dashboard/plan.svg">
+                            <p>Plan</p>
+                        </li>
+                        <li>
+                            <img src="img/dashboard/earn.svg">
+                            <p>Earn</p>
+                        </li>
+                    </ul>
+                </nav>
+            <!--</div>-->
+            <!--<div class="column small-12 medium-2">-->
+                <div class="search-container">
+                    <div class="search">
+                        <input type='text'>
+                        <button class="dashboard-button">
+                            <img src="./img/dashboard/search-blue.svg">
+                        </button>
+                    </div>
+                    <button class="dashboard-button">
+                        <img src="img/dashboard/search-white.svg">
+                    </button>
+                    <button class="dashboard-button">
+                        <img src="img/dashboard/turn-off.svg">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="row">
+            <div class="column small-8">
+                <div class="row">
+                    <div class="column small-12">
+                        <h2>Finance life stream</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column small-4">
+                        <div class="statistics">
+                            <h3>Balance</h3>
+                            <p class="amount"><b>7 200,34</b> PLN</p>
+                        </div>
+                    </div>
+                    <div class="column small-4">
+                        <div class="statistics">
+                            <h3>Available funds</h3>
+                            <p class="amount"><b>7 200,34</b> PLN</p>
+                        </div>
+                    </div>
+                    <div class="column small-4">
+                        <div class="statistics">
+                            <h3>Scheduled payments</h3>
+                            <p class="amount"><b>7 200,34</b> PLN</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="column small-4">
+                    <div class="options">
+                        <p>
+                            Add
+                            <button class="dashboard-button">Bank</button>
+                            <button class="dashboard-button">Payment</button>
+                        </p>
+                        <p>
+                            Account analysis
+                            <input class="switch-input" id="on-off" type="checkbox">
+                            <label class="switch-paddle" for="on-off">
+                                <span class="switch-inactive" aria-hidden="true">Off</span>
+                                <span class="switch-active" aria-hidden="true">On</span>
+                            </label>
+                        </p>
+                    </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column small-12">
+                <div class="main-chart">
+                    <img src="img/dashboard/chart.png">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column small-12 medium-6">
+                <h4>Products</h4>
+                <div class="row">
+
+                    <div class="column small-12 medium-6">
+                        <div class="product-container">
+                            <img src="img/dashboard/wallet.svg">
+                            <div>
+                                <p>Wallets</p>
+                                <p>50 000 PLN</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column small-12 medium-6">
+                        <div class="product-container">
+                            <img src="img/dashboard/deposits.svg">
+                            <div>
+                                <p>Deposits</p>
+                                <p>50 000 PLN</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column small-12 medium-6">
+                        <div class="product-container">
+                            <img src="img/dashboard/accounts.svg">
+                            <div>
+                                <p>Accounts</p>
+                                <p>50 000 PLN</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column small-12 medium-6">
+                        <div class="product-container">
+                            <img src="img/dashboard/funds.svg">
+                            <div>
+                                <p>Funds</p>
+                                <p>50 000 PLN</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column small-12 medium-6">
+                        <div class="product-container">
+                            <img src="img/dashboard/loan.svg">
+                            <div>
+                                <p>Bank loans</p>
+                                <p>50 000 PLN</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column small-12 medium-6">
+                <h4>History</h4>
+                <div class="row">
+                    <div class="column small-12">
+                        <ul class="history-container">
+                            <li>
+                                <div class="date">29.06</div>
+                                <div class="details">
+                                    <p class="correspondent">Gas station shell</p>
+                                    <p class="type">
+                                        Gas
+                                        <button class="down">
+                                            <i class="material-icons">expand_more</i>
+                                        </button>
+                                    </p>
+                                </div>
+                                <div class="payment"><b>-100,00</b> PLN</div>
+                            </li>
+                            <li>
+                                <div class="date">29.06</div>
+                                <div class="details">
+                                    <p class="correspondent">Gas station shell</p>
+                                    <p class="type">
+                                        Gas
+                                        <button class="down">
+                                            <i class="material-icons">expand_more</i>
+                                        </button>
+                                    </p>
+                                </div>
+                                <div class="payment"><b>-100,00</b> PLN</div>
+                            </li>
+                            <li>
+                                <div class="date">29.06</div>
+                                <div class="details">
+                                    <p class="correspondent">Gas station shell</p>
+                                    <p class="type">
+                                        Gas
+                                        <button class="down">
+                                            <i class="material-icons">expand_more</i>
+                                        </button>
+                                    </p>
+                                </div>
+                                <div class="payment"><b>-100,00</b> PLN</div>
+                            </li>
+                            <li>
+                                <div class="date">29.06</div>
+                                <div class="details">
+                                    <p class="correspondent">Gas station shell</p>
+                                    <p class="type">
+                                        Gas
+                                        <button class="down">
+                                            <i class="material-icons">expand_more</i>
+                                        </button>
+                                    </p>
+                                </div>
+                                <div class="payment"><b>-100,00</b> PLN</div>
+                            </li>
+                            <li>
+                                <div class="date">29.06</div>
+                                <div class="details">
+                                    <p class="correspondent">Gas station shell</p>
+                                    <p class="type">
+                                        Gas
+                                        <button class="down">
+                                            <i class="material-icons">expand_more</i>
+                                        </button>
+                                    </p>
+                                </div>
+                                <div class="payment"><b>-100,00</b> PLN</div>
+                            </li>
+                            <li>
+                                <div class="date">29.06</div>
+                                <div class="details">
+                                    <p class="correspondent">Gas station shell</p>
+                                    <p class="type">
+                                        Gas
+                                        <button class="down">
+                                            <i class="material-icons">expand_more</i>
+                                        </button>
+                                    </p>
+                                </div>
+                                <div class="payment"><b>-100,00</b> PLN</div>
+                            </li>
+                            <li>
+                                <div class="date">29.06</div>
+                                <div class="details">
+                                    <p class="correspondent">Gas station shell</p>
+                                    <p class="type">
+                                        Gas
+                                        <button class="down">
+                                            <i class="material-icons">expand_more</i>
+                                        </button>
+                                    </p>
+                                </div>
+                                <div class="payment"><b>-100,00</b> PLN</div>
+                            </li>
+                            <li>
+                                <div class="date">29.06</div>
+                                <div class="details">
+                                    <p class="correspondent">Gas station shell</p>
+                                    <p class="type">
+                                        Gas
+                                        <button class="down">
+                                            <i class="material-icons">expand_more</i>
+                                        </button>
+                                    </p>
+                                </div>
+                                <div class="payment"><b>-100,00</b> PLN</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</div>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/what-input/dist/what-input.js"></script>
+<script src="bower_components/foundation-sites/dist/js/foundation.js"></script>
+<script src="js/app.js"></script>
+<script src="js/_navigation.js"></script>
+</body>
+</html>

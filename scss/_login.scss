@@ -1,13 +1,15 @@
 @import "mixins";
 @import "variables";
 
-.container {
+.login-container {
   display: flex;
   align-items: center;
+  min-height: 100vh;
+}
+.image-background {
   background: url('../img/bg.jpeg') no-repeat bottom, rgba(10, 10, 10, 0.6);
   background-size: cover;
   background-blend-mode: multiply;
-  min-height: 100vh;
 }
 
 .logo-frame {
@@ -19,7 +21,7 @@
   padding: 30px 0;
   float: right;
   img {
-    width: 120px;
+    width: 70%;
   }
   &:hover {
     border: solid 2px rgba(255,255,255,0.5);

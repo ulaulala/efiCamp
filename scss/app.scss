@@ -3,7 +3,7 @@
 @import 'settings';
 @import 'foundation';
 @import 'motion-ui';
-@import '_login';
+
 
 @include foundation-global-styles;
 //@include foundation-grid;
@@ -56,3 +56,8 @@
 @include motion-ui-animations;
 
 
+@import '_login';
+@import '_variables';
+@import '_mixins';
+@import 'dashboard/_navigation';
+@import 'dashboard/_basis';

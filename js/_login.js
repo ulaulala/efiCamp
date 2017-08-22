@@ -52,6 +52,7 @@ function checkResponse() {
             console.log("succes", response);
             info.classList.remove("visible");
             info.classList.add("hidden");
+            window.location = 'dashboard.html';
         }
     });
 }

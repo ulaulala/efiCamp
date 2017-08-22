@@ -1,0 +1,20 @@
+<svg width="56" height="60" viewBox="0 0 56 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>011-calendar</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(2126 -1019)">
+<g id="011-calendar">
+<g id="Group">
+<g id="Vector">
+<use xlink:href="#path0_fill" transform="translate(-2126 1019)" fill="#FFFFFF"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path1_fill" transform="translate(-2117 1042)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 55 4L 48 4L 48 1C 48 0.447 47.553 0 47 0L 40 0C 39.447 0 39 0.447 39 1L 39 4L 17 4L 17 1C 17 0.447 16.553 0 16 0L 9 0C 8.447 0 8 0.447 8 1L 8 4L 1 4C 0.447 4 0 4.447 0 5L 0 16L 0 59C 0 59.553 0.447 60 1 60L 55 60C 55.553 60 56 59.553 56 59L 56 16L 56 5C 56 4.447 55.553 4 55 4ZM 41 2L 46 2L 46 5L 46 8L 41 8L 41 5L 41 2ZM 10 2L 15 2L 15 5L 15 8L 10 8L 10 5L 10 2ZM 2 6L 8 6L 8 9C 8 9.553 8.447 10 9 10L 16 10C 16.553 10 17 9.553 17 9L 17 6L 39 6L 39 9C 39 9.553 39.447 10 40 10L 47 10C 47.553 10 48 9.553 48 9L 48 6L 54 6L 54 15L 2 15L 2 6ZM 2 58L 2 17L 54 17L 54 58L 2 58Z"/>
+<path id="path1_fill" d="M 27 0L 20 0L 18 0L 11 0L 9 0L 0 0L 0 9L 0 11L 0 18L 0 20L 0 29L 9 29L 11 29L 18 29L 20 29L 27 29L 29 29L 38 29L 38 20L 38 18L 38 11L 38 9L 38 0L 29 0L 27 0ZM 20 2L 27 2L 27 9L 20 9L 20 2ZM 27 18L 20 18L 20 11L 27 11L 27 18ZM 11 11L 18 11L 18 18L 11 18L 11 11ZM 11 2L 18 2L 18 9L 11 9L 11 2ZM 2 2L 9 2L 9 9L 2 9L 2 2ZM 2 11L 9 11L 9 18L 2 18L 2 11ZM 9 27L 2 27L 2 20L 9 20L 9 27ZM 18 27L 11 27L 11 20L 18 20L 18 27ZM 27 27L 20 27L 20 20L 27 20L 27 27ZM 36 27L 29 27L 29 20L 36 20L 36 27ZM 36 18L 29 18L 29 11L 36 11L 36 18ZM 36 2L 36 9L 29 9L 29 2L 36 2Z"/>
+</defs>
+</svg>
