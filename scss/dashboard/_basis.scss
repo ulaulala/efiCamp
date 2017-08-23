@@ -58,8 +58,11 @@ h4 {
   margin: 10px 0;
 }
 .main-chart {
-  img {
+  canvas {
     width: 100%;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
   }
 }
 .product-container {
@@ -88,7 +91,7 @@ h4 {
   }
 }
 .history-container {
-  margin: 0;
+  margin: 0 0 50px 0;
   overflow-y: scroll;
   max-height: 500px;
   border-radius: 7px;

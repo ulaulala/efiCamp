@@ -5,6 +5,7 @@ const searchButton = document.querySelectorAll('.search-container .dashboard-but
 const searchCloseButton = document.querySelector('.search-container .search button');
 
 const nav = document.querySelector('nav');
+
 document.addEventListener("DOMContentLoaded", function(event) {
     searchButton.addEventListener('click', function(event) {
         nav.style.display = 'none';
