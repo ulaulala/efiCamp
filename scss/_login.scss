@@ -32,7 +32,7 @@
 .login-form {
   min-width: 546px;
   @include font-roboto;
-  background-color: #0d7f8d;
+  background-color: $theme-color;
   padding: 36px 28px;
   border-radius: 5px;
   margin: auto;

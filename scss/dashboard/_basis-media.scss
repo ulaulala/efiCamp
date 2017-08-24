@@ -1,0 +1,60 @@
+@media screen and (max-width: 1090px) {
+  h2 {
+    font-size: 50px;
+  }
+  .statistics h3, .statistics p {
+    font-size: 23px;
+  }
+  .product-container {
+    img {
+      height: 35px;
+      margin: 10px 9px 10px 3px;
+    }
+    div {
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+  .history-container {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 885px) {
+  h2 {
+    font-size: 50px;
+  }
+  .statistics h3, .statistics p {
+    font-size: 23px;
+  }
+  .options p button, .options p label {
+    margin-left: 10px;
+  }
+}
+@media screen and (max-width: 813px) {
+  .options p button, .options p label {
+    margin-left: 10px;
+  }
+  .container {
+    margin-top: 100px;
+  }
+}
+/*small columns*/
+@media screen and (max-width: 800px) {
+  .statistics {
+    h3, p {
+      font-size: 30px;
+    }
+  }
+}
+
+/*hovers*/
+@media screen and (min-width: 525px) {
+  button:hover, nav ul li:hover {
+    cursor: pointer;
+  }
+  .product-container:hover, .history-container li:hover {
+    background-color: #0bbed3;
+    cursor: pointer;
+  }
+}

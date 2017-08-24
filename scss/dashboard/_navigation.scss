@@ -1,13 +1,22 @@
+.dashboard-button {
+  background-color: $theme-color;
+  border-radius: 4px;
+  @include font-roboto;
+  font-stretch: condensed;
+  text-transform: uppercase;
+  padding: 15px 30px;
+}
 
 .fixed-bar {
   @include font-roboto;
-  background-color: #0bbed3;
+  background-color: $theme-color;
   position: fixed;
   width: 100vw;
   height: 140px;
   padding: 15px 0;
   left: 0;
   top: 0;
+  z-index: 999;
 }
 header {
   button {
@@ -21,6 +30,13 @@ header {
     }
   }
 }
+.mobile-bar {
+  display: none;
+  .hamburger-menu {
+    color: $font-color;
+    font-size: 35px;
+  }
+ }
 .personal-info {
   display: flex;
   div {
@@ -68,18 +84,6 @@ nav.menu {
         margin: 20px;
         color: #fff;
       }
-      &:hover {
-        background-color: #0a0a0a;
-        &::after, &:after {
-          content: '';
-          height: 20px;
-          width: 20px;
-          margin-top: 72px;
-          border-radius: 50%;
-          border: solid 10px #0a0a0a;
-          position: absolute;
-        }
-      }
     }
   }
 }
@@ -116,5 +120,22 @@ nav.menu {
       background-color: transparent;
     }
   }
+  &.search-visible {
+    display: flex;
+    .search {
+      display: flex;
+    }
+    button:nth-last-child(2) {
+      display: none;
+    }
+  }
+  &.search-hidden {
+    display: inline-block;
+    .search {
+      display: none;
+    }
+    button:nth-last-child(2) {
+      display: inline-block;
+    }
+  }
 }
-

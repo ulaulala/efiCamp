@@ -7,26 +7,16 @@ h1, h2, h3, h4, h5, h6, p, span, button {
   min-height: 100vh;
 }
 
-.dashboard-button {
-  background-color: #0bbed3;
-  border-radius: 4px;
-  @include font-roboto;
-  font-stretch: condensed;
-  text-transform: uppercase;
-  padding: 15px 30px;
-}
 .down {
   background-color: transparent;
   padding: 0;
   i {
-    color: #0bbed3;
+    color: $theme-color;
     vertical-align: middle;
     margin: 0 5px;
     font-size: 30px;
   }
 }
-
-
 h2 {
   font-size: 60px;
   margin: 30px 0;
@@ -58,11 +48,20 @@ h4 {
   margin: 10px 0;
 }
 .main-chart {
+  overflow: hidden;
   canvas {
     width: 100%;
     background-color: #ffffff;
     padding: 15px;
     border-radius: 10px;
+  }
+  &.visible {
+    height: 100%;
+    animation: fadeInVertically .1s;
+  }
+  &.hidden {
+    height: 0;
+    animation: fadeOutVertically .1s;
   }
 }
 .product-container {
