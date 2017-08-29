@@ -47,9 +47,21 @@
     }
   }
 }
+@media screen and (max-width: 500px) {
+  .history-container {
+    li {
+      div.date {
+        width: 60px;
+      }
+      div.payment, div.date {
+        font-size: 14px;
+      }
+    }
+  }
+}
 
 /*hovers*/
-@media screen and (min-width: 525px) {
+@media screen and (min-width: 800px) {
   button:hover, nav ul li:hover {
     cursor: pointer;
   }

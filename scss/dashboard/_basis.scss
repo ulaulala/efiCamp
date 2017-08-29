@@ -108,13 +108,19 @@ h4 {
       .correspondent, .type {
         margin: 0;
       }
-      &.payment, &.date {
-        flex-grow: 1;
+      &.payment {
+        text-align: right;
+      }
+      &.date {
         text-align: center;
+        width: 80px;
+      }
+      &.payment, &.date {
         line-height: 70px;
+        white-space: nowrap;
       }
       &.details {
-        flex-grow: 5;
+        flex-grow: 6;
         margin: 0 10px;
       }
     }

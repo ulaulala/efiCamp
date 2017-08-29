@@ -59,18 +59,23 @@ function getProducts(endpoint) {
 getProducts("data/products");
 
 function getHistoryTemplate(responseObject) {   /*do refactor after API error fixing*/
-    return `<div class="date">29.06</div>
+    var options = {
+        'day': 'numeric',
+        'month': '2-digit'
+    };
+    return `<div class="date">` + new Date(responseObject.date).toLocaleDateString('pl', options) +`</div>
                  <div class="details">
-                    <p class="correspondent">Gas station shell</p>
+                    <p class="correspondent">` + responseObject.description + `</p>
                     <p class="type">
-                      Gas
+                      ` + responseObject.category + `
                       <button class="down">
                         <i class="material-icons">expand_more</i>
                       </button>
                     </p>
                  </div>
-            <div class="payment"><b>-100,00</b> PLN</div>`;
+            <div class="payment"><b>` + responseObject.amount.toFixed(2) + `</b> ` + responseObject.currency + `</div>`;
 }
+
 
 function getHistory(endpoint) {
     $.ajax({
@@ -85,6 +90,7 @@ function getHistory(endpoint) {
             for(var i = 0; i < response.content.length; i++) {
                 var historyElement = document.createElement('li');
                 historyElement.innerHTML = getHistoryTemplate(response.content[i]);
+                historyContainer.appendChild(historyElement);
             }
         }
     });
