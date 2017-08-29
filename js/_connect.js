@@ -58,7 +58,7 @@ function getProducts(endpoint) {
 
 getProducts("data/products");
 
-function getHistoryTemplate(responseObject) {   /*do refactor after API error fixing*/
+function getHistoryTemplate(responseObject) {
     var options = {
         'day': 'numeric',
         'month': '2-digit'
