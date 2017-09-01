@@ -1,0 +1,46 @@
+.history-container.full-screen-history {
+  max-height: none;
+  overflow-y: hidden;
+  li {
+    &.title-row {
+      background-color: transparent;
+      height: 30px;
+      font-size: 20px;
+      border: none;
+      .correspondent, .type, .date, .payment {
+        line-height: 30px;
+      }
+    }
+    &:nth-child(2) {
+      border-radius: 7px 7px 0 0;
+    }
+    div {
+      display: flex;
+      justify-content: space-around;
+      font-size: 25px;
+      font-family: "Roboto Condensed", sans-serif;
+      .correspondent {
+        flex: 7 1 0 ;
+        align-self: center;
+      }
+      .type {
+        flex: 3 1 0;
+        align-self: center;
+      }
+      &.payment {
+        flex: 2 1 0;
+        display: flex;
+        justify-content: flex-end;
+        b {
+          margin-right: 10px;
+        }
+      }
+      &.date {
+        flex: 1 1 0;
+      }
+      &.details {
+        flex: 10 1 0;
+      }
+    }
+  }
+}

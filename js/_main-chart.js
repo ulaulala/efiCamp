@@ -23,7 +23,12 @@ $.ajax({
     success: function(response) {
         for(var i = 0; i < response.content.length; i++) {
             var date = new Date(response.content[i].date);
-            paymentsData[Object.keys(paymentsData)[date.getMonth()]] += response.content[i].amount;
+            if(response.content[i].status === 'income') {
+                paymentsData[Object.keys(paymentsData)[date.getMonth()]] += response.content[i].amount;
+            }
+            else {
+                paymentsData[Object.keys(paymentsData)[date.getMonth()]] -= response.content[i].amount;
+            }
         }
         drawMainChart(paymentsData);
     }

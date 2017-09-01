@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>History</title>
     <link rel="stylesheet" href="css/app.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -81,82 +81,28 @@
     </header>
     <main>
         <div class="row">
-            <div class="column medium-8 small-12">
-                <div class="row">
-                    <div class="column small-12">
-                        <h2>Finance life stream</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="column medium-4 small-12">
-                        <div class="statistics">
-                            <h3>Balance</h3>
-                            <p class="amount"><b class="count" id="balance"></b> PLN</p>
-                        </div>
-                    </div>
-                    <div class="column medium-4 small-12">
-                        <div class="statistics">
-                            <h3>Available funds</h3>
-                            <p class="amount"><b class="count" id="funds"></b> PLN</p>
-                        </div>
-                    </div>
-                    <div class="column medium-4 small-12">
-                        <div class="statistics">
-                            <h3>Scheduled payments</h3>
-                            <p class="amount"><b class="count" id="payments"></b> PLN</p>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="column small-4">
+                <h1>History</h1>
             </div>
-            <div class="column medium-4 small-12">
-                    <div class="options">
-                        <p>
-                            Add
-                            <a href="">
-                                <button class="dashboard-button">Bank</button>
-                            </a>
-                            <a href="transfer.html">
-                                <button class="dashboard-button">Payment</button>
-                            </a>
-                        </p>
-                        <p>
-                            Account analysis
-                            <input class="switch-input" id="on-off" type="checkbox" checked>
-                            <label class="switch-paddle" for="on-off">
-                                <span class="switch-active" aria-hidden="true">On</span>
-                                <span class="switch-inactive" aria-hidden="true">Off</span>
-                            </label>
-                        </p>
-                    </div>
+            <div class="column small-8">
+                <!-- search x2 -->
             </div>
         </div>
         <div class="row">
             <div class="column small-12">
-                <div class="main-chart">
-                    <canvas></canvas>
-                </div>
+                <ul class="history-container full-screen-history">
+                    <li class="title-row">
+                        <div class="date">Date</div>
+                        <div class="details">
+                            <p class="correspondent">Details</p>
+                            <p class="type">Category</p>
+                        </div>
+                        <div class="payment">Amount</div>
+                    </li>
+                    <!-- dynamic content here -->
+                </ul>
             </div>
         </div>
-        <div class="row">
-            <div class="column small-12 medium-6">
-                <h4>Products</h4>
-                <div id="products" class="row">
-                    <!--dynamic content here-->
-                </div>
-            </div>
-            <div class="column small-12 medium-6">
-                <h4>History</h4>
-                <div class="row">
-                    <div class="column small-12">
-                        <ul class="history-container">
-                            <!--dynamic content here-->
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </main>
 </div>
 <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -164,11 +110,7 @@
 <script src="bower_components/foundation-sites/dist/js/foundation.js"></script>
 <script src="js/app.js"></script>
 <script src="js/_navigation.js"></script>
-<script src="js/_main-chart.js"></script>
 <script src="js/_connect-declarations.js"></script>
-<script src="js/_connect.js"></script>
-<script src="js/_dashboard-actions.js"></script>
-<script src="js/_animations.js"></script>
-<script src="bower_components/chart.js/dist/Chart.js"></script>
+<script src="js/_history-connect.js"></script>
 </body>
 </html>
