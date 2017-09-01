@@ -1,0 +1,368 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfer</title>
+    <link rel="stylesheet" href="css/app.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+<body>
+<div class="container">
+    <header class="fixed-bar mobile-hidden">
+        <div class="row">
+            <div class="column small-12 medium-5">
+                <div class="mobile-bar">
+                    <button class="hamburger-menu">☰</button>
+                    <span class="logo-frame mini">
+                        <img src="./img/efi.svg" alt="logo efi">
+                    </span>
+                    <span class="mini">
+                        <img src="img/dashboard/message.svg" alt="messages">
+                    </span>
+                </div>
+                <div class="personal-info">
+                    <span class="logo-frame mini">
+                        <img src="./img/efi.svg" alt="logo efi">
+                    </span>
+                    <span class="logo-frame mini portrait">
+                        <img src="./img/avatar.svg" alt="portrait">
+                    </span>
+                    <div>
+                        <p>Jan Kowalski</p>
+                        <span>
+                            <img src="img/dashboard/message.svg" alt="messages">
+                        </span>
+                        <span>
+                            <img src="img/dashboard/settings.svg" alt="settings">
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="column small-12 medium-7">
+                <nav class="menu">
+                    <ul>
+                        <li>
+                            <img src="img/dashboard/home.svg" alt="home">
+                            <p>Home</p>
+                        </li>
+                        <li>
+                            <img src="img/dashboard/analyse.svg" alt="analyse">
+                            <p>Analyse</p>
+                        </li>
+                        <li>
+                            <img src="img/dashboard/plan.svg" alt="plan">
+                            <p>Plan</p>
+                        </li>
+                        <li>
+                            <img src="img/dashboard/earn.svg" alt="earn">
+                            <p>Earn</p>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="search-container">
+                    <div class="search">
+                        <input type='text'>
+                        <button class="dashboard-button">
+                            <img src="./img/dashboard/search-blue.svg" alt="close search">
+                        </button>
+                    </div>
+                    <button class="dashboard-button">
+                        <img src="img/dashboard/search-white.svg" alt="open search">
+                    </button>
+                    <button class="dashboard-button">
+                        <img src="img/dashboard/turn-off.svg" alt="log out">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="row">
+            <div class="column small-12">
+                <form class="transfer-form">
+                    <div class="row">
+                        <div class="column small-12">
+                            <a href="dashboard.html">
+                                <img class="back" src="img/transfer/back.svg" alt="back">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column small-12">
+                            <div class="current-account">
+                                <div>
+                                    <div class="icon-center">
+                                        <img src="img/transfer/current-account.svg">
+                                    </div>
+                                    <div>
+                                        <p class="account-title">Current account</p>
+                                        <p class="account-code">00 0000 0000 0000 0000 0000 0000</p>
+                                    </div>
+                                </div>
+                                <p class="amount">
+                                    <b>2917,50 </b><span class="currency" id="amountCurrency">PLN</span>
+                                    <span class="down">
+                                        <i class="material-icons">expand_more</i>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="list-of-accounts">
+                                <div class="list-of-accounts-element">
+                                <div>
+                                    <div class="icon-center">
+                                        <img src="img/transfer/current-account.svg">
+                                    </div>
+                                    <div>
+                                        <p class="account-title">Savings account</p>
+                                        <p class="account-code">11 1111 1111 1111 1111 1111 1111</p>
+                                    </div>
+                                </div>
+                                <p class="amount">
+                                    <b>58907,50 </b><span class="currency">EUR</span>
+                                    <span class="down">
+                                        <i class="material-icons">expand_more</i>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="list-of-accounts-element">
+                                <div>
+                                    <div class="icon-center">
+                                        <img src="img/transfer/current-account.svg">
+                                    </div>
+                                    <div>
+                                        <p class="account-title">Savings account</p>
+                                        <p class="account-code">22 2222 2222 2222 2222 2222 2222</p>
+                                    </div>
+                                </div>
+                                <p class="amount">
+                                    <b>107,50 </b><span class="currency">GPB</span>
+                                    <span class="down">
+                                        <i class="material-icons">expand_more</i>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="list-of-accounts-element">
+                                <div>
+                                    <div class="icon-center">
+                                        <img src="img/transfer/current-account.svg">
+                                    </div>
+                                    <div>
+                                        <p class="account-title">Savings account</p>
+                                        <p class="account-code">33 3333 3333 3333 3333 3333 3333</p>
+                                    </div>
+                                </div>
+                                <p class="amount">
+                                    <b>9745,86 </b><span class="currency">USD</span>
+                                    <span class="down">
+                                        <i class="material-icons">expand_more</i>
+                                    </span>
+                                </p>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column small-9 small-offset-3">
+                            <div class="add-account-container">
+                                <div class="icon-center">
+                                    <img src="img/transfer/add.svg">
+                                </div>
+                                <p>Add the account from which you draw funds</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column small-3">
+                            <div class="form-title">Type</div>
+                        </div>
+                        <div class="column small-9">
+                            <div class="transfer-type-container">
+                                    <label for="country">
+                                        <input id="country" value="country" type="radio" name="transfer-type" checked>
+                                        <div class="icon">
+                                            <img src="img/transfer/country.svg">
+                                        </div>
+                                        <p>Country</p>
+                                    </label>
+                                    <label for="own">
+                                        <input id="own" value="own" type="radio" name="transfer-type">
+                                        <div class="icon">
+                                            <img src="img/transfer/own.svg">
+                                        </div>
+                                        <p>Own</p>
+                                    </label>
+                                    <label for="currencies">
+                                        <input id="currencies" value="currencies" type="radio" name="transfer-type">
+                                        <div class="icon">
+                                            <img src="img/transfer/currencies.svg">
+                                        </div>
+                                        <p>Currencies</p>
+                                    </label>
+                                    <label for="zus">
+                                        <input id="zus" value="zus" type="radio" name="transfer-type">
+                                        <div class="icon">
+                                            <img src="img/transfer/zus.png">
+                                        </div>
+                                        <p>ZUS</p>
+                                    </label>
+                                    <label for="tax">
+                                        <input id="tax" value="tax" type="radio" name="transfer-type">
+                                        <div class="icon">
+                                            <img src="img/transfer/us.svg">
+                                        </div>
+                                        <p>TAX</p>
+                                    </label>
+                                    <label for="gsm">
+                                        <input id="gsm" value="gsm" type="radio" name="transfer-type">
+                                        <div class="icon">
+                                            <img src="img/transfer/gsm.svg">
+                                        </div>
+                                        <p>GSM</p>
+                                    </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column small-3">
+                            <label for="recipient" class="form-title">Recipient</label>
+                        </div>
+                        <div class="column small-9">
+                            <input id="recipient" type="text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column small-3">
+                            <div class="form-title">Where</div>
+                        </div>
+                        <div class="column small-9">
+                            <div class="transfer-where-container">
+                                    <label for="account">
+                                        <input id="account" value="account" type="radio" name="transfer-where" checked>
+                                        <div class="form-checkbox"><div></div></div>
+                                        <span>Account</span>
+                                    </label>
+                                    <label for="facebook">
+                                        <input id="facebook" value="facebook" type="radio" name="transfer-where">
+                                        <div class="form-checkbox"><div></div></div>
+                                        <span>Facebook</span>
+                                    </label>
+                                    <label for="phone">
+                                        <input id="phone" value="phone" type="radio" name="transfer-where">
+                                        <div class="form-checkbox"><div></div></div>
+                                        <span>Phone</span>
+                                    </label>
+                                    <label for="email">
+                                        <input id="email" value="email" type="radio" name="transfer-where">
+                                        <div class="form-checkbox"><div></div></div>
+                                        <span>E-mail</span>
+                                    </label>
+                                    <label for="by-phone">
+                                        <input id="by-phone" value="by-phone" type="radio" name="transfer-where">
+                                        <div class="form-checkbox"><div></div></div>
+                                        <span>By phone</span>
+                                    </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column small-3">
+                            <label for="number" class="form-title">Number</label>
+                        </div>
+                        <div class="column small-9">
+                            <input id="number" type="tel">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column small-3">
+                            <label for="sum" class="form-title">Sum</label>
+                        </div>
+                        <div class="column small-9">
+                            <input id="sum" type="text">
+                            <div class="custom-select">
+                                <select>
+                                    <option value="pln" selected>PLN</option>
+                                    <option value="eur">EUR</option>
+                                    <option value="usd">USD</option>
+                                    <option value="gpb">GPB</option>
+                                </select>
+                            </div>
+                            <span id="sumAfterConvert"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column small-3">
+                            <label for="when" class="form-title">When</label>
+                        </div>
+                        <div class="column small-9">
+                            <input id="when" type="date">
+                            <img src="img/transfer/calendar.svg">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column small-3">
+                            <label for="title" class="form-title">Title</label>
+                        </div>
+                        <div class="column small-9">
+                            <input id="title" type="text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column small-3">
+                            <div class="form-title">Type of transfer</div>
+                        </div>
+                        <div class="column small-9">
+                            <div class="transfer-speed-container">
+                                <label for="normally">
+                                    <input id="normally" value="normally" type="radio" name="transfer-speed" checked>
+                                    <div class="form-checkbox"><div></div></div>
+                                    <div>
+                                        <span><b>Normally</b></span>
+                                        <span>about 2 days</span>
+                                    </div>
+                                </label>
+                                <label for="express">
+                                    <input id="express" value="express" type="radio" name="transfer-speed">
+                                    <div class="form-checkbox"><div></div></div>
+                                    <div>
+                                        <span><b>Express Eliksir</b></span>
+                                        <span>15 min</span>
+                                    </div>
+                                </label>
+                                <label for="sorbnet">
+                                    <input id="sorbnet" value="sorbnet" type="radio" name="transfer-speed">
+                                    <div class="form-checkbox"><div></div></div>
+                                    <div>
+                                        <span><b>Sorbnet</b></span>
+                                        <span>2 hours</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column small-3">
+                        </div>
+                        <div class="column small-9">
+                            <input id="transfer-submit" class="dashboard-button" type="submit" value="continue">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/what-input/dist/what-input.js"></script>
+<script src="bower_components/foundation-sites/dist/js/foundation.js"></script>
+<script src="js/app.js"></script>
+<script src="js/_navigation.js"></script>
+<script src="js/_transfer.js"></script>
+<script src="js/_animations.js"></script>
+<script src="bower_components/chart.js/dist/Chart.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</body>
+</html>

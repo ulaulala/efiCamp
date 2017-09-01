@@ -27,16 +27,16 @@
                     <span class="logo-frame mini">
                         <img src="./img/efi.svg" alt="logo efi">
                     </span>
-                    <span class="logo-frame mini">
-                        <img src="./img/cool.svg">
+                    <span class="logo-frame mini portrait">
+                        <img src="./img/avatar.svg" alt="portrait">
                     </span>
                     <div>
                         <p>Jan Kowalski</p>
                         <span>
-                            <img src="img/dashboard/message.svg">
+                            <img src="img/dashboard/message.svg" alt="messages">
                         </span>
                         <span>
-                            <img src="img/dashboard/settings.svg">
+                            <img src="img/dashboard/settings.svg" alt="settings">
                         </span>
                     </div>
                 </div>
@@ -91,19 +91,19 @@
                     <div class="column medium-4 small-12">
                         <div class="statistics">
                             <h3>Balance</h3>
-                            <p class="amount"><b id="balance"></b> PLN</p>
+                            <p class="amount"><b class="count" id="balance"></b> PLN</p>
                         </div>
                     </div>
                     <div class="column medium-4 small-12">
                         <div class="statistics">
                             <h3>Available funds</h3>
-                            <p class="amount"><b id="funds"></b> PLN</p>
+                            <p class="amount"><b class="count" id="funds"></b> PLN</p>
                         </div>
                     </div>
                     <div class="column medium-4 small-12">
                         <div class="statistics">
                             <h3>Scheduled payments</h3>
-                            <p class="amount"><b id="payments"></b> PLN</p>
+                            <p class="amount"><b class="count" id="payments"></b> PLN</p>
                         </div>
                     </div>
                 </div>
@@ -113,8 +113,12 @@
                     <div class="options">
                         <p>
                             Add
-                            <button class="dashboard-button">Bank</button>
-                            <button class="dashboard-button">Payment</button>
+                            <a href="">
+                                <button class="dashboard-button">Bank</button>
+                            </a>
+                            <a href="transfer.html">
+                                <button class="dashboard-button">Payment</button>
+                            </a>
                         </p>
                         <p>
                             Account analysis
@@ -163,6 +167,7 @@
 <script src="js/_main-chart.js"></script>
 <script src="js/_connect.js"></script>
 <script src="js/_dashboard-actions.js"></script>
+<script src="js/_animations.js"></script>
 <script src="bower_components/chart.js/dist/Chart.js"></script>
 </body>
 </html>

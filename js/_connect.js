@@ -63,6 +63,7 @@ function getHistoryTemplate(responseObject) {
         'day': 'numeric',
         'month': '2-digit'
     };
+    var incomeOrOutcome = responseObject.status === 'income' ? 'income' : 'outcome';
     return `<div class="date">` + new Date(responseObject.date).toLocaleDateString('pl', options) +`</div>
                  <div class="details">
                     <p class="correspondent">` + responseObject.description + `</p>
@@ -73,9 +74,8 @@ function getHistoryTemplate(responseObject) {
                       </button>
                     </p>
                  </div>
-            <div class="payment"><b>` + responseObject.amount.toFixed(2) + `</b> ` + responseObject.currency + `</div>`;
+            <div class="payment"><b class="` + incomeOrOutcome + `">` + responseObject.amount.toFixed(2) + `</b> ` + responseObject.currency + `</div>`;
 }
-
 
 function getHistory(endpoint) {
     $.ajax({
@@ -86,6 +86,7 @@ function getHistory(endpoint) {
             console.log(response);
         },
         success: function(response) {
+            console.log(response);
             var historyContainer = document.querySelector('ul.history-container');
             for(var i = 0; i < response.content.length; i++) {
                 var historyElement = document.createElement('li');

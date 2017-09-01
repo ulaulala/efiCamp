@@ -1,0 +1,26 @@
+/*hovers*/
+@media screen and (min-width: 800px) {
+  .current-account:hover {
+    cursor: pointer;
+    border-color: $theme-color;
+    .down {
+      .material-icons {
+        margin-bottom: -10px;
+        transition: margin 0.2s linear;
+      }
+    }
+  }
+  .list-of-accounts-element:hover {
+    background-color: $theme-color;
+    cursor: pointer;
+  }
+  .transfer-type-container {
+    .icon:hover {
+      cursor: pointer;
+      background-color: $icon-hover-color;
+    }
+  }
+  input:hover, label:hover, select:hover {
+     cursor: pointer;
+  }
+}

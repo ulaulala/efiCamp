@@ -5,6 +5,7 @@
   font-stretch: condensed;
   text-transform: uppercase;
   padding: 15px 30px;
+  border: none;
 }
 
 .fixed-bar {
@@ -51,14 +52,14 @@ header {
         margin: 0 7px;
       }
       &::before, &:before {
-        content: ''; /*tutaj licznik wiadomości*/
+        content: ''; /*messages counter here*/
         visibility: hidden;
         height: 25px;
         width: 25px;
         margin: -10px 0 0 25px;
         border-radius: 50%;
         position: absolute;
-        background-color: #e9157c;
+        background-color: $counter-color;
       }
     }
   }
@@ -69,7 +70,7 @@ nav.menu {
     display: flex;
     li {
       @include font-roboto;
-      font-size: 14px;
+      font-size: 15px;
       text-shadow: none;
       display: flex;
       flex-direction: column;
@@ -82,7 +83,7 @@ nav.menu {
       img {
         height: 40px;
         margin: 20px;
-        color: #fff;
+        color: $font-color;
       }
     }
   }
@@ -92,7 +93,15 @@ nav.menu {
   height: 100px;
   margin: 0 5px;
 }
-
+.portrait {
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
 .search-container {
   display: inline-block;
   float: right;
@@ -102,7 +111,7 @@ nav.menu {
     height: 110px;
     z-index: 1;
     border-radius: 10px;
-    background-color: #ffffff;
+    background-color: $font-color;
     input {
       margin: 15px 20px 15px 30px;
       height: 80px;
@@ -112,7 +121,7 @@ nav.menu {
       background-color: transparent;
       &:focus {
         outline: none;
-        border-bottom: solid 2px rgba(233, 229, 233, 0.44);
+        border-bottom: solid 2px $hover-color;
       }
     }
     button {
