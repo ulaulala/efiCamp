@@ -39,12 +39,18 @@ transferSubmit.addEventListener('click', function(event){
 });
 currentAccount.addEventListener('click', function(event) {
     for (let i = 0; i < listOfAccounts.length; i++) {
-        if(listOfAccounts[i].style.display === 'flex') {
-            listOfAccounts[i].style.display = 'none';
+        if(listOfAccounts[i].classList.contains('visible')) {
+            listOfAccounts[i].classList.add('hidden');
+            if(listOfAccounts[i].classList.contains('visible')){
+                listOfAccounts[i].classList.remove('visible');
+            }
             this.querySelector('i').innerText = 'expand_more';
         }
         else {
-            listOfAccounts[i].style.display = 'flex';
+            if(listOfAccounts[i].classList.contains('hidden')) {
+                listOfAccounts[i].classList.remove('hidden');
+            }
+            listOfAccounts[i].classList.add('visible');
             this.querySelector('i').innerText = 'expand_less';
         }
 

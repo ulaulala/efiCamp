@@ -44,3 +44,14 @@
     }
   }
 }
+#loading {
+  display: none;
+  text-align: center;
+  margin-bottom: 50px;
+  &.visible {
+    display: block;
+  }
+  &.hidden {
+    display: none;
+  }
+}

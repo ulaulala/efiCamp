@@ -69,6 +69,12 @@
         }
       }
     }
+    &.visible {
+       display: flex;
+     }
+    &.hidden {
+      display: none;
+    }
   }
 }
 .add-account-container {
