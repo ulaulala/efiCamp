@@ -281,20 +281,25 @@ function searchRecipients() {
     }
 }
 
+function clearChildNodes(element) {
+    while (element.hasChildNodes()) {
+        element.removeChild(element.lastChild);
+    }
+}
+
 function filterText(inputText) {
     const searchingListContainer = document.querySelector('.searching-list');
 
-    while (searchingListContainer.hasChildNodes()) {
-        searchingListContainer.removeChild(searchingListContainer.lastChild);
-    }
+    clearChildNodes(searchingListContainer);
 
     if(inputText) {
         for(let i = 0; i < recipientsList.length; i++) {
             inputText = inputText.toLowerCase();
-            let splittedString = recipientsList[i].toLowerCase();
-            splittedString = splittedString.split(' ');
-            for(let j = 0; j < splittedString.length; j++) {
-                if(splittedString[j].startsWith(inputText)) {
+            let splitString = recipientsList[i].toLowerCase();
+            splitString = splitString.split(' ');
+
+            for(let j = 0; j < splitString.length; j++) {
+                if(splitString[j].startsWith(inputText)) {
                     var recipientListElement = document.createElement('li');
                     recipientListElement.innerText = recipientsList[i];
                     searchingListContainer.appendChild(recipientListElement);
@@ -302,10 +307,9 @@ function filterText(inputText) {
                     recipientListElement.addEventListener('click', function(event) {
                         transferRecipient.value = this.innerText;
 
-                        while (searchingListContainer.hasChildNodes()) {
-                            searchingListContainer.removeChild(searchingListContainer.lastChild);
-                        }
+                        clearChildNodes(searchingListContainer);
                     });
+
                     break;
                 }
             }
