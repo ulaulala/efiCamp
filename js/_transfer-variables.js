@@ -1,5 +1,6 @@
 /*transfer-form inputs by id*/
 const transferRecipient = document.querySelector('#recipient');
+const transferRecipientSearch = document.querySelector('#recipient + img');
 const transferNumber = document.querySelector('#number');
 const transferSum = document.querySelector('#sum');
 const transferWhen = document.querySelector('#when');
@@ -33,3 +34,19 @@ var transferData = { /*transfer summary*/
     title: undefined,
     speed: undefined
 };
+
+var recipientsList = [
+    "Bradley Barton",
+    "Zachary Wyatt",
+    "Yasmin Miller",
+    "Noah Lloyd",
+    "Hannah Baldwin",
+    "Amelie Sullivan",
+    "Ewan Jones",
+    "Zoe Pickering",
+    "Lucas Miles",
+    "Callum Nelson",
+    "Elizabeth Holland",
+    "Poppy Birch",
+    "Thomas Jones"
+];

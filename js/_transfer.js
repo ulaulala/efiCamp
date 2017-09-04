@@ -1,7 +1,11 @@
 transferRecipient.addEventListener('keyup', function(event) {
+    filterText(this.value);
     if(checkTextField(this)){
         transferData.recipient = this.value;
     }
+});
+transferRecipientSearch.addEventListener('click', function(event) {
+   searchRecipients();
 });
 transferTitle.addEventListener('keyup', function(event) {
     if(checkTextField(this)) {
@@ -67,3 +71,5 @@ for (let i = 0; i < listOfInputs.length; i++) { /*speech bubble is hidden when u
         }
     });
 }
+
+

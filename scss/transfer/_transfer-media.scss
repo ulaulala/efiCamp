@@ -12,6 +12,7 @@
   }
   .list-of-accounts-element:hover {
     background-color: $theme-color;
+    color: $font-color;
     cursor: pointer;
   }
   .transfer-type-container {
@@ -22,5 +23,22 @@
   }
   input:hover, label:hover, select:hover {
      cursor: pointer;
+  }
+  input#recipient + img:hover {
+    cursor: pointer;
+  }
+  .modal {
+    ul {
+      li:hover {
+        background-color: $theme-color;
+        color: $font-color;
+      }
+    }
+  }
+  .searching-list {
+    li:hover {
+      background-color: $theme-color;
+      color: $font-color;
+    }
   }
 }

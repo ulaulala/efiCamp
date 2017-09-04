@@ -250,3 +250,65 @@ function replaceContent(containerFrom, containerTo) {
     containerFrom.innerText = containerTo.innerText;
     containerTo.innerText = temp;
 }
+
+function searchRecipients() {
+    const modal = document.querySelector('.modal');
+    const recipientsContainer = document.querySelector('.modal ul');
+
+    modal.addEventListener('click', function(event) {
+        if(!recipientsContainer.contains(event.target)) {
+            modal.classList.add('hidden');
+            modal.classList.remove('visible');
+        }
+    });
+
+    modal.classList.remove('hidden');
+    modal.classList.add('visible');
+
+    if(recipientsContainer.children.length === 0) {
+        for(let i = 0; i < recipientsList.length; i++) {
+            var recipientListElement = document.createElement('li');
+            recipientListElement.innerText = recipientsList[i];
+            recipientsContainer.appendChild(recipientListElement);
+
+            recipientListElement.addEventListener('click', function(event) {
+                transferRecipient.value = this.innerText;
+
+                modal.classList.add('hidden');
+                modal.classList.remove('visible');
+            });
+        }
+    }
+}
+
+function filterText(inputText) {
+    const searchingListContainer = document.querySelector('.searching-list');
+
+    while (searchingListContainer.hasChildNodes()) {
+        searchingListContainer.removeChild(searchingListContainer.lastChild);
+    }
+
+    if(inputText) {
+        for(let i = 0; i < recipientsList.length; i++) {
+            inputText = inputText.toLowerCase();
+            let splittedString = recipientsList[i].toLowerCase();
+            splittedString = splittedString.split(' ');
+            for(let j = 0; j < splittedString.length; j++) {
+                if(splittedString[j].startsWith(inputText)) {
+                    var recipientListElement = document.createElement('li');
+                    recipientListElement.innerText = recipientsList[i];
+                    searchingListContainer.appendChild(recipientListElement);
+
+                    recipientListElement.addEventListener('click', function(event) {
+                        transferRecipient.value = this.innerText;
+
+                        while (searchingListContainer.hasChildNodes()) {
+                            searchingListContainer.removeChild(searchingListContainer.lastChild);
+                        }
+                    });
+                    break;
+                }
+            }
+        }
+    }
+}
