@@ -37,6 +37,9 @@ transferCurrencySelect.addEventListener('click', function(event) {
         transferData.sum = valueAfterConversion;
     }
 });
+addAccountButton.addEventListener('click', function(event) {
+   addAccount();
+});
 transferSubmit.addEventListener('click', function(event){
     event.preventDefault();
     generalValidation();
@@ -71,5 +74,4 @@ for (let i = 0; i < listOfInputs.length; i++) { /*speech bubble is hidden when u
         }
     });
 }
-
 

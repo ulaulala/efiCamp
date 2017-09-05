@@ -6,7 +6,8 @@ const transferSum = document.querySelector('#sum');
 const transferWhen = document.querySelector('#when');
 const transferTitle = document.querySelector('#title');
 
-const transferCurrencySelect = document.querySelector('.custom-select select');
+const transferCurrencySelect = document.querySelector('.custom-select #transfer-currency');
+const addAccountButton = document.querySelector('.add-account-container');
 
 /*inputs type=radio*/
 const transferTypes = document.querySelectorAll('.transfer-type-container input');
@@ -50,3 +51,12 @@ var recipientsList = [
     "Poppy Birch",
     "Thomas Jones"
 ];
+
+const addingAccountModal = document.querySelector('#adding-account-modal');
+const addingAccountContainer = document.querySelector('.new-account-container');
+
+const newAccountCode = addingAccountContainer.querySelector('#new-account-code');
+const newAccountCurrency = addingAccountContainer.querySelectorAll('#new-account-currency option');
+const newAccountSaldo = addingAccountContainer.querySelector('#new-account-saldo');
+
+const addButton = addingAccountContainer.querySelector('.dashboard-button');

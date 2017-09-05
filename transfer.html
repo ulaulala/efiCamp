@@ -172,6 +172,33 @@
                                 </div>
                                 <p>Add the account from which you draw funds</p>
                             </div>
+                            <div id="adding-account-modal" class="modal hidden">
+                                <div class="new-account-container">
+                                    <p>Add new account</p>
+                                    <label for="new-account-code">
+                                        <span>Account code</span>
+                                        <input id="new-account-code" type="number">
+                                    </label>
+
+                                    <label for="new-account-currency">
+                                        <span>Currency</span>
+                                        <div class="custom-select">
+                                            <select id="new-account-currency">
+                                                <option value="pln" selected>PLN</option>
+                                                <option value="eur">EUR</option>
+                                                <option value="usd">USD</option>
+                                                <option value="gpb">GPB</option>
+                                            </select>
+                                        </div>
+                                    </label>
+
+                                    <label for="new-account-saldo">
+                                        <span>Saldo</span>
+                                        <input id="new-account-saldo" type="number">
+                                    </label>
+                                    <button class="dashboard-button">Add</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
@@ -235,7 +262,7 @@
                             <ul class="searching-list">
 
                             </ul>
-                            <div class="modal hidden">
+                            <div id="searching-modal" class="modal hidden">
                                 <ul>
 
                                 </ul>
@@ -291,7 +318,7 @@
                         <div class="column small-9">
                             <input id="sum" type="text">
                             <div class="custom-select">
-                                <select>
+                                <select id="transfer-currency">
                                     <option value="pln" selected>PLN</option>
                                     <option value="eur">EUR</option>
                                     <option value="usd">USD</option>

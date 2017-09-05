@@ -257,6 +257,33 @@ input {
       @extend .current-account;
     }
   }
+  .new-account-container {
+    @extend .transfer-form;
+    p {
+      text-align: center;
+      font-size: 25px;
+      margin-bottom: 35px;
+    }
+    label {
+      margin: 20px;
+      span {
+        margin: 0 20px 0 0;
+      }
+      input {
+        float: right;
+      }
+      .custom-select {
+        display: block;
+      }
+    }
+    button.dashboard-button {
+      margin: 15px 19px;
+      width: 92%;
+    }
+    .speech-bubble {
+      margin-top: 70px;
+    }
+  }
   &.visible {
     display: flex;
   }

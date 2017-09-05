@@ -41,4 +41,9 @@
       color: $font-color;
     }
   }
+  .add-account-container:hover {
+    cursor: pointer;
+    color: $theme-color;
+    transition: color 0.3s linear;
+  }
 }

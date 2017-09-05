@@ -252,7 +252,7 @@ function replaceContent(containerFrom, containerTo) {
 }
 
 function searchRecipients() {
-    const modal = document.querySelector('.modal');
+    const modal = document.querySelector('#searching-modal');
     const recipientsContainer = document.querySelector('.modal ul');
 
     modal.addEventListener('click', function(event) {
@@ -315,4 +315,161 @@ function filterText(inputText) {
             }
         }
     }
+}
+
+function getAccountTemplate(accountCode, accountCurrency, accountSaldo) {
+    return `<div>
+                                    <div class="icon-center">
+                                        <img src="img/transfer/current-account.svg">
+                                    </div>
+                                    <div>
+                                        <p class="account-title">Savings account</p>
+                                        <p class="account-code">` + accountCode + `</p>
+                                    </div>
+                                </div>
+                                <p class="amount">
+                                    <b>` + accountSaldo + ` </b><span class="currency">` + accountCurrency + `</span>
+                                    <span class="down">
+                                        <i class="material-icons">expand_more</i>
+                                    </span>
+                                </p>`;
+}
+
+function checkAccountCode(input) {
+    input.value = input.value.replace(' ', '');
+    if(!input.value) {
+        input.classList.add('error-input');
+        if(input.parentNode.querySelector('.speech-bubble')) {
+            removeSpeechBubble(input);
+        }
+        showSpeechBubble(input, 'This field cannot be blank.');
+        return false;
+    }
+    else if(input.value.length !== 26) {
+        input.classList.add('error-input');
+        if(input.parentNode.querySelector('.speech-bubble')) {
+            removeSpeechBubble(input);
+        }
+        showSpeechBubble(input, 'Type 26 figures.');
+        return false;
+    }
+    else {
+        const accountCodes = document.querySelectorAll('.list-of-accounts-element .account-code');
+        for(let i = 0; i < accountCodes.length; i++) {
+            let temp = accountCodes[i].innerText;
+            temp = temp.split(' ').join('');
+            console.log(temp);
+            if(accountCodes[i].innerText.split(' ').join('') === input.value) {
+                input.classList.add('error-input');
+                if(input.parentNode.querySelector('.speech-bubble')) {
+                    removeSpeechBubble(input);
+                }
+                showSpeechBubble(input, 'This account code already exist.');
+                return false;
+            }
+        }
+        if(input.classList.contains('error-input')) {
+            input.classList.remove('error-input');
+        }
+        if(input.parentNode.querySelector('.speech-bubble')) {
+            removeSpeechBubble(input);
+        }
+        return true;
+    }
+}
+
+function addSpacesToAccountCode(code) {
+    let codeArray = [
+        code.substring(0,2),
+        code.substring(2,6),
+        code.substring(6,10),
+        code.substring(10,14),
+        code.substring(14,18),
+        code.substring(18,22),
+        code.substring(22,26)
+    ];
+    return codeArray.join(' ');
+}
+
+function checkSaldo(input) {
+    if(!input.value) {
+        input.classList.add('error-input');
+        if(input.parentNode.querySelector('.speech-bubble')) {
+            removeSpeechBubble(input);
+        }
+        showSpeechBubble(input, 'This field cannot be blank.');
+        return false;
+    }
+    else {
+        if(input.classList.contains('error-input')) {
+            input.classList.remove('error-input');
+        }
+        if(input.parentNode.querySelector('.speech-bubble')) {
+            removeSpeechBubble(input);
+        }
+        return true;
+    }
+}
+
+function addAccount() {
+    addingAccountModal.addEventListener('click', function(event) {
+        if(!addingAccountContainer.contains(event.target)) { //close modal if click out of the container
+            addingAccountModal.classList.add('hidden');
+            addingAccountModal.classList.remove('visible');
+        }
+    });
+
+    addingAccountModal.classList.add('visible');
+    addingAccountModal.classList.remove('hidden');
+
+    newAccountCode.addEventListener('focusout', function(event) {
+        if (this.parentNode.querySelector('.speech-bubble')) {
+            removeSpeechBubble(this);
+        }
+    });
+    newAccountSaldo.addEventListener('focusout', function(event) {
+        if (this.parentNode.querySelector('.speech-bubble')) {
+            removeSpeechBubble(this);
+        }
+    });
+    newAccountCode.addEventListener('keyup', function(event) {
+        checkAccountCode(this);
+    });
+    newAccountSaldo.addEventListener('keyup', function(event) {
+        checkSaldo(this);
+    });
+
+    addButton.addEventListener('click', function(event) {
+        event.preventDefault();
+
+        var newAccountCurrencyValue;
+        for (let i = 0; i < newAccountCurrency.length; i++) {
+            if(newAccountCurrency[i].selected) {
+                newAccountCurrencyValue = newAccountCurrency[i].value.toUpperCase();
+            }
+        }
+
+        if (checkAccountCode(newAccountCode) && checkSaldo(newAccountSaldo)) {
+            const accountsContainer = document.querySelector('.list-of-accounts');
+            var newAccountElement = document.createElement('div');
+            newAccountElement.classList.add('list-of-accounts-element');
+            newAccountElement.innerHTML = getAccountTemplate(addSpacesToAccountCode(newAccountCode.value), newAccountCurrencyValue, newAccountSaldo.value.replace('.',','));
+            accountsContainer.appendChild(newAccountElement);
+
+            currentAccount = document.querySelector('.current-account');
+            listOfAccounts = document.querySelectorAll('.list-of-accounts-element');
+
+            for (let i = 0; i < listOfAccounts.length; i++) { //new list of accounts
+                listOfAccounts[i].classList.add('visible');
+
+                listOfAccounts[i].addEventListener('click', function(event) {
+                    changeAccount(this);
+                });
+            }
+
+            addingAccountModal.classList.remove('visible');
+            addingAccountModal.classList.add('hidden');
+        }
+
+    });
 }
