@@ -66,9 +66,9 @@ header {
 }
 nav.menu {
   display: inline-block;
-  ul {
+  div {
     display: flex;
-    li {
+    a {
       @include font-roboto;
       font-size: 15px;
       text-shadow: none;
@@ -76,7 +76,7 @@ nav.menu {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      list-style-type: none;
+      text-transform: uppercase;
       width: 90px;
       height: 145px;
       margin: -20px 0 0 0;

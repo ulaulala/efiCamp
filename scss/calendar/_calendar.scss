@@ -1,0 +1,55 @@
+.month, .year {
+  display: inline-block;
+  margin: 10px 0;
+}
+.daysContainer, .days {
+  display: flex;
+  flex-wrap: wrap;
+  @include font-roboto;
+}
+.days {
+  .day {
+    width: calc(100%/7);
+    color: $icon-color;
+    margin: 10px 0;
+  }
+}
+.daysContainer {
+  .day {
+    color: $second-font-color;
+    background-color: $font-color;
+    width: calc(100%/7);
+    height: 150px;
+    padding: 25px;
+    font-size: 35px;
+    border: solid 1px $second-theme-color;
+    &:nth-child(7n) {
+      color: $counter-color;
+    }
+    &:nth-child(7n-1), &:nth-child(7n) {
+      background-color: #ededed;
+    }
+  }
+  .empty {
+    background-color: #ededed;
+  }
+}
+
+.calendar-title {
+  margin: 20px 10px;
+  display: flex;
+  align-items: center;
+  h1 {
+    display: inline-block;
+    width: 600px;
+    margin: 0 30px;
+    text-align: center;
+  }
+  #prev, #next {
+    display: inline-block;
+    i {
+      color: $theme-color;
+      font-size: 60px;
+    }
+  }
+}
