@@ -356,9 +356,6 @@ function checkAccountCode(input) {
     else {
         const accountCodes = document.querySelectorAll('.list-of-accounts-element .account-code');
         for(let i = 0; i < accountCodes.length; i++) {
-            let temp = accountCodes[i].innerText;
-            temp = temp.split(' ').join('');
-            console.log(temp);
             if(accountCodes[i].innerText.split(' ').join('') === input.value) {
                 input.classList.add('error-input');
                 if(input.parentNode.querySelector('.speech-bubble')) {
