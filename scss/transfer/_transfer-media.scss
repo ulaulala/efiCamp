@@ -43,7 +43,8 @@
   }
   .add-account-container:hover {
     cursor: pointer;
-    color: $theme-color;
-    transition: color 0.3s linear;
+    p {
+      text-decoration: underline;
+    }
   }
 }

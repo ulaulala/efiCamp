@@ -32,7 +32,7 @@ function historyInit() {
         win.scroll(function() {
 
             //round to be sure pixels will be the same
-            if (((Math.round(($(document).height() - win.height())/2)) === Math.round(win.scrollTop()/2))) {
+            if (((Math.round(($(document).height() - win.height())/3)) === Math.round(win.scrollTop()/3))) {
 
                 if(letScrollMore) {
                     loading.classList.add('visible');

@@ -177,7 +177,7 @@
                                     <p>Add new account</p>
                                     <label for="new-account-code">
                                         <span>Account code</span>
-                                        <input id="new-account-code" type="number">
+                                        <input id="new-account-code" type="number" data-pattern="account-code">
                                     </label>
 
                                     <label for="new-account-currency">
@@ -194,7 +194,7 @@
 
                                     <label for="new-account-saldo">
                                         <span>Saldo</span>
-                                        <input id="new-account-saldo" type="number">
+                                        <input id="new-account-saldo" type="number" data-pattern="account-saldo">
                                     </label>
                                     <button class="dashboard-button">Add</button>
                                 </div>
@@ -257,7 +257,7 @@
                             <label for="recipient" class="form-title">Recipient</label>
                         </div>
                         <div class="column small-9">
-                            <input id="recipient" type="text">
+                            <input id="recipient" type="text" data-pattern="no-special-chars">
                             <img src="img/transfer/searching-book.svg">
                             <ul class="searching-list">
 
@@ -308,7 +308,7 @@
                             <label for="number" class="form-title">Number</label>
                         </div>
                         <div class="column small-9">
-                            <input id="number" type="tel">
+                            <input id="number" type="tel" data-pattern="phone-number">
                         </div>
                     </div>
                     <div class="row">
@@ -316,7 +316,7 @@
                             <label for="sum" class="form-title">Sum</label>
                         </div>
                         <div class="column small-9">
-                            <input id="sum" type="text">
+                            <input id="sum" type="text" data-pattern="transfer-amount">
                             <div class="custom-select">
                                 <select id="transfer-currency">
                                     <option value="pln" selected>PLN</option>
@@ -333,7 +333,7 @@
                             <label for="when" class="form-title">When</label>
                         </div>
                         <div class="column small-9">
-                            <input id="when" type="date">
+                            <input id="when" type="date" data-pattern="no-past-date">
                             <img src="img/transfer/calendar.svg">
                         </div>
                     </div>
@@ -342,7 +342,7 @@
                             <label for="title" class="form-title">Title</label>
                         </div>
                         <div class="column small-9">
-                            <input id="title" type="text">
+                            <input id="title" type="text" data-chars="256">
                         </div>
                     </div>
                     <div class="row">

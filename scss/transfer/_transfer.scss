@@ -318,6 +318,9 @@ input {
   font-size: 22px;
   margin-left: 10px;
   z-index: 15;
+  &.hidden {
+    display: none;
+  }
 }
 
 .speech-bubble:after {

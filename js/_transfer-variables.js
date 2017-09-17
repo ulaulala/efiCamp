@@ -20,8 +20,8 @@ const transferSubmit = document.querySelector('#transfer-submit');
 var currentAccount = document.querySelector('.current-account');
 var listOfAccounts = document.querySelectorAll('.list-of-accounts-element');
 
-/*list of inputs to validate*/
-const listOfInputs = [transferRecipient, transferNumber, transferSum, transferWhen, transferTitle];
+// /*list of inputs to validate*/
+// const listOfInputs = [transferRecipient, transferNumber, transferSum, transferWhen, transferTitle];
 
 var transferData = { /*transfer summary*/
     accountCode: undefined,

@@ -1,6 +1,7 @@
 .history-container.full-screen-history {
   max-height: none;
   overflow-y: hidden;
+  margin-bottom: 60px;
   li {
     &.title-row {
       background-color: transparent;
@@ -47,7 +48,7 @@
 #loading {
   display: none;
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
   &.visible {
     display: block;
   }
