@@ -23,18 +23,35 @@ function checkDate(input) {
     }
 }
 
+function maxChars(input, max) {
+    if(!input.value) {
+        input.classList.add('error-input');
+        showSpeechBubble(input, 'This field cannot be blank.');
+        return false;
+    }
+    else if(input.value.length > max) {
+        input.classList.add('error-input');
+        showSpeechBubble(input, 'Maximum ' + max + ' characters.');
+        return false;
+    }
+    else {
+        if(input.classList.contains('error-input')) {
+            input.classList.remove('error-input');
+        }
+        if(input.parentNode.querySelector('.speech-bubble')) {
+            removeSpeechBubble(input);
+        }
+        return true;
+    }
+}
 function checkTextField(input) {
     if(!input.value) {
         input.classList.add('error-input');
         showSpeechBubble(input, 'This field cannot be blank.');
         return false;
     }
-    else if(input.value.length > 256) {
-        input.classList.add('error-input');
-        showSpeechBubble(input, 'Maximum 256 characters.');
-        return false;
-    }
     else if(/^[a-zA-Z0-9- ]*$/.test(input.value) === false) {
+        input.classList.add('error-input');
         showSpeechBubble(input, 'This field contains illegal characters.');
         return false;
     }
@@ -101,104 +118,126 @@ function checkSum(input) {
         showSpeechBubble(input, 'This field cannot be blank.');
         return false;
     }
+    if(isNumeric(input.value)) {
+        var saldo = document.querySelector('.amount b').innerText.replace(',', '.');
+        saldo = Number(saldo);
+
+        var sum = input.value;
+
+        let options = input.parentNode.querySelectorAll('.custom-select option');
+        let currencyOfAccount = document.querySelector('#amountCurrency').innerText;
+        for (let i = 0; i < options.length; i++) {
+            if(options[i].selected) {
+                sum = convert(input.value, options[i].value, currencyOfAccount);
+            }
+        }
+        document.querySelector('#sumAfterConvert').innerText = sum + ' ' + currencyOfAccount;
+    }
+    if (saldo === 0 || sum > saldo || sum <= 0 || isNaN(input.value)) {
+        input.classList.add('error-input');
+        showSpeechBubble(input, 'Invalid value.');
+        return false;
+    }
     else {
-        if(isNumeric(input.value)) {
-            var saldo = document.querySelector('.amount b').innerText.replace(',', '.');
-            saldo = Number(saldo);
-
-            var sum = input.value;
-
-            let options = input.parentNode.querySelectorAll('.custom-select option');
-            let currencyOfAccount = document.querySelector('#amountCurrency').innerText;
-            for (let i = 0; i < options.length; i++) {
-                if(options[i].selected) {
-                    sum = convert(input.value, options[i].value, currencyOfAccount);
-                }
-            }
-            document.querySelector('#sumAfterConvert').innerText = sum + ' ' + currencyOfAccount;
+        if (input.classList.contains('error-input')) {
+            input.classList.remove('error-input');
         }
-        if (saldo === 0 || sum > saldo || sum <= 0 || isNaN(input.value)) {
-            input.classList.add('error-input');
-            showSpeechBubble(input, 'Invalid value.');
-            return false;
+        if (input.parentNode.querySelector('.speech-bubble')) {
+            removeSpeechBubble(input);
         }
-        else {
-            if (input.classList.contains('error-input')) {
-                input.classList.remove('error-input');
-            }
-            if (input.parentNode.querySelector('.speech-bubble')) {
-                removeSpeechBubble(input);
-            }
-            return sum;
-        }
+        return sum;
     }
 }
+
+var convertObject = {
+    /*currencyTo: { currencyFrom: rate }*/
+    'pln': { 'eur': 4.25, 'usd': 3.59, 'gpb': 4.62 },
+    'eur': { 'pln': 0.23, 'usd': 0.84, 'gpb': 1.08 },
+    'usd': { 'eur': 1.18, 'pln': 0.27, 'gpb': 1.28 },
+    'gpb': { 'pln': 0.21, 'eur': 0.92, 'usd': 0.77 }
+};
 
 function convert(value, currencyFrom, currencyTo) {
     currencyFrom = currencyFrom.toLowerCase();
     currencyTo = currencyTo.toLowerCase();
 
-    if(currencyTo === 'pln') {
-        switch(currencyFrom) {
-            case 'eur':
-                value *= 4.25;
-                break;
-            case 'usd':
-                value *= 3.59;
-                break;
-            case 'gpb':
-                value *= 4.62;
-                break;
-        }
+    if(currencyFrom !== currencyTo) {
+        value *= convertObject[currencyTo][currencyFrom];
     }
-    else if(currencyTo === 'eur') {
-        switch(currencyFrom) {
-            case 'pln':
-                value *= 0.23;
-                break;
-            case 'usd':
-                value *= 0.84;
-                break;
-            case 'gpb':
-                value *= 1.08;
-                break;
-        }
-    }
-    else if(currencyTo === 'usd') {
-        switch(currencyFrom) {
-            case 'eur':
-                value *= 1.18;
-                break;
-            case 'pln':
-                value *= 0.27;
-                break;
-            case 'gpb':
-                value *= 1.28;
-                break;
-        }
-    }
-    else if(currencyTo === 'gpb') {
-        switch(currencyFrom) {
-            case 'eur':
-                value *= 0.92;
-                break;
-            case 'usd':
-                value *= 0.77;
-                break;
-            case 'pln':
-                value *= 0.21;
-                break;
-        }
-    }
+
     return value;
 }
-
 function isCorrect() {
-    return  checkTextField(transferRecipient) &&
-        checkPhoneNumber(transferNumber) &&
-        checkSum(transferSum) &&
-        checkDate(transferWhen) &&
-        checkTextField(transferTitle);
+    const inputsGroup = document.querySelectorAll('.transfer-form input');
+    let validation = [];
+    for(let i = 0; i < inputsGroup.length; i++) {
+        switch(inputsGroup[i].getAttribute('data-pattern')) {
+            case 'phone-number':
+                validation.push(function () {
+                    return checkPhoneNumber(inputsGroup[i]);
+                });
+                break;
+            case 'transfer-amount':
+                validation.push(function () {
+                    return checkSum(inputsGroup[i]);
+                });
+                break;
+            case 'no-special-chars':
+                validation.push(function () {
+                    return checkTextField(inputsGroup[i]);
+                });
+                break;
+            case 'no-past-date':
+                validation.push(function () {
+                    return checkDate(inputsGroup[i]);
+                });
+                break;
+        }
+        if(inputsGroup[i].getAttribute('data-chars')) {
+            validation.push(function () {
+                return maxChars(inputsGroup[i], inputsGroup[i].getAttribute('data-chars'));
+            });
+        }
+    }
+    for(let valid of validation) {
+        valid();
+    }
+    for(let inputElement of inputsGroup) {
+        if (inputElement.parentNode.querySelector('.speech-bubble')) {
+            inputElement.parentNode.querySelector('.speech-bubble').classList.add('hidden');
+        }
+        inputElement.addEventListener('keyup', function(event) {
+            if (this.classList.contains('error-input')) {
+                this.classList.remove('error-input');
+            }
+            if(this.parentNode.querySelector('.speech-bubble')) {
+                removeSpeechBubble(this);
+            }
+        });
+        inputElement.addEventListener('mouseover', function(event) {
+            if (this.parentNode.querySelector('.speech-bubble')) {
+                this.parentNode.querySelector('.speech-bubble').classList.remove('hidden');
+            }
+        })
+        inputElement.addEventListener('mouseout', function(event) {
+            if (this.parentNode.querySelector('.speech-bubble')) {
+                this.parentNode.querySelector('.speech-bubble').classList.add('hidden');
+            }
+        })
+    }
+    for(let valid of validation) {
+        if(valid() === false) {
+            return false;
+        }
+    }
+
+    transferData.recipient = transferRecipient.value;
+    transferData.number = transferNumber.value;
+    transferData.sum = checkSum(transferSum);
+    transferData.when = transferWhen.value;
+    transferData.title = transferTitle.value;
+
+    return true;
 }
 
 function generalValidation() {
@@ -265,19 +304,20 @@ function searchRecipients() {
     modal.classList.remove('hidden');
     modal.classList.add('visible');
 
-    if(recipientsContainer.children.length === 0) {
-        for(let i = 0; i < recipientsList.length; i++) {
-            var recipientListElement = document.createElement('li');
-            recipientListElement.innerText = recipientsList[i];
-            recipientsContainer.appendChild(recipientListElement);
+    if(recipientsContainer.children.length) {
+        return false;
+    }
+    for(let i = 0; i < recipientsList.length; i++) {
+        var recipientListElement = document.createElement('li');
+        recipientListElement.innerText = recipientsList[i];
+        recipientsContainer.appendChild(recipientListElement);
 
-            recipientListElement.addEventListener('click', function(event) {
-                transferRecipient.value = this.innerText;
+        recipientListElement.addEventListener('click', function(event) {
+            transferRecipient.value = this.innerText;
 
-                modal.classList.add('hidden');
-                modal.classList.remove('visible');
-            });
-        }
+            modal.classList.add('hidden');
+            modal.classList.remove('visible');
+        });
     }
 }
 
