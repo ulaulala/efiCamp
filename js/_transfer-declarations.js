@@ -469,10 +469,10 @@ function addAccount() {
             removeSpeechBubble(this);
         }
     });
-    newAccountCode.addEventListener('keyup', function(event) {
+    newAccountCode.addEventListener('blur', function(event) {
         checkAccountCode(this);
     });
-    newAccountSaldo.addEventListener('keyup', function(event) {
+    newAccountSaldo.addEventListener('blur', function(event) {
         checkSaldo(this);
     });
 
